@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from typing import List, Optional
 import redis
 
-from app.models import Alert, ViolationType
+from app.models import Alert, Violation, User
 from app.auth import get_current_user
 from app.database import db
 
