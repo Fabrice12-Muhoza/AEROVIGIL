@@ -10,7 +10,9 @@ import {
   Cog6ToothIcon,
   ArrowRightOnRectangleIcon,
   Bars3Icon,
-  XMarkIcon
+  XMarkIcon,
+  VideoCameraIcon, // Add this
+  UserGroupIcon, // Add this
 } from '@heroicons/react/24/outline';
 
 const Sidebar = () => {
@@ -18,13 +20,15 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const navItems = [
-    { path: '/dashboard', icon: HomeIcon, label: 'Dashboard' },
-    { path: '/dashboard/alerts', icon: BellAlertIcon, label: 'Live Alerts' },
-    { path: '/dashboard/violations', icon: ExclamationTriangleIcon, label: 'Violations' },
-    { path: '/evidence', icon: FolderIcon, label: 'Evidence Library' },
-    { path: '/reports', icon: ChartBarIcon, label: 'Reports' },
-    { path: '/settings', icon: Cog6ToothIcon, label: 'Settings' },
-  ];
+  { path: '/dashboard', icon: HomeIcon, label: 'Dashboard' },
+  { path: '/dashboard/alerts', icon: BellAlertIcon, label: 'Live Alerts' },
+  { path: '/dashboard/violations', icon: ExclamationTriangleIcon, label: 'Violations' },
+  { path: '/evidence', icon: FolderIcon, label: 'Evidence Library' },
+  { path: '/reports', icon: ChartBarIcon, label: 'Reports' },
+  { path: '/cameras', icon: VideoCameraIcon, label: 'Cameras' }, // Add this
+  { path: '/users', icon: UserGroupIcon, label: 'Users' }, // Add this
+  { path: '/settings', icon: Cog6ToothIcon, label: 'Settings' },
+];
 
   return (
     <>

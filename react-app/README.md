@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+🌐 API Endpoints
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Authentication:
 
-In the project directory, you can run:
 
-### `npm start`
+POST   /api/auth/login          - User login
+POST   /api/auth/logout         - User logout
+POST   /api/auth/register       - User registration
+GET    /api/auth/profile        - Get user profile
+PUT    /api/auth/profile        - Update profile
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Alerts:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+GET    /api/alerts/live         - Get live alerts
+GET    /api/alerts/{id}         - Get alert by ID
+PATCH  /api/alerts/{id}/status  - Update alert status
+POST   /api/alerts/{id}/acknowledge - Acknowledge alert
+GET    /api/alerts/statistics   - Get alert statistics
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Violations:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+GET    /api/violations          - Get all violations
+GET    /api/violations/recent   - Get recent violations
+GET    /api/violations/{id}     - Get violation by ID
+POST   /api/violations          - Create violation
+PUT    /api/violations/{id}     - Update violation
+DELETE /api/violations/{id}     - Delete violation
+GET    /api/violations/types    - Get violation types
+GET    /api/violations/stats    - Get violation statistics
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Evidence:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GET    /api/evidence            - Get all evidence
+GET    /api/evidence/{id}       - Get evidence by ID
+GET    /api/evidence/vehicle/{vehicleId} - Get evidence by vehicle
+POST   /api/evidence/upload     - Upload evidence
+DELETE /api/evidence/{id}       - Delete evidence
+PATCH  /api/evidence/{id}/metadata - Update evidence metadata
+POST   /api/evidence/{id}/verify - Verify evidence hash
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Reports:
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+GET    /api/reports             - Get all reports
+GET    /api/reports/{id}        - Get report by ID
+POST   /api/reports/generate    - Generate report
+GET    /api/reports/{id}/download - Download report
+DELETE /api/reports/{id}        - Delete report
+GET    /api/reports/templates   - Get report templates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Dashboard:
+
+
+
+
+GET    /api/dashboard/stats     - Get dashboard statistics
+GET    /api/dashboard/activity  - Get activity feed
+GET    /api/dashboard/cameras/status - Get camera status
+GET    /api/dashboard/trends    - Get violation trends
+
+
+
+
+Real-time:
+
+
+
+
+GET    /api/events              - Server-Sent Events stream
+WS     /api/stream/{vehicleId}  - WebSocket video stream
